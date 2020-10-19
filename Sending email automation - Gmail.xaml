@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sending_email_automation___Gmail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="488,938" sap2010:WorkflowViewState.IdRef="Sending_email_automation___Gmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sending_email_automation___Gmail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="488.666666666667,909.333333333333" sap2010:WorkflowViewState.IdRef="Sending_email_automation___Gmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -27,7 +27,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -45,10 +45,9 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>System.ValueTuple</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="468,838" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="468.666666666667,849.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pwd" />
       <Variable x:TypeArguments="sd:DataTable" Name="receiverList" />
@@ -59,28 +58,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="426,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsF1N2jZKL0a+xzwiK0NcpQAAAAACAAAAAAAQZgAAAAEAACAAAACSla6Ij375UwVkmr8mj6bp/jv6Sq4TdfPnAlGBznBIAwAAAAAOgAAAAAIAACAAAADH1spjy8bIlax6Zx5X2yMwa1POZPYucf8Or0eICloIsxAAAABzpG12L4XMdtylXuRZLQDxQAAAAP/zy4SGe+2v7wgNN8d6pncM3sC8Li1wj/m2bQTh7CyOdo2mwKCbdtUBplIYpFXlZ7zw3QsBEhmZlSQgqEx3HpY=" Result="[pwd]" />
-    <ui:ReadRange AddHeaders="True" DataTable="[receiverList]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="426,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Receiver list.xlsx">
+    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="426.666666666667,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjYhpzo0z1kadnZQ/GwT4twAAAAACAAAAAAADZgAAwAAAABAAAAAJIO++mhvMqf8YRtZD8osFAAAAAASAAACgAAAAEAAAAMXKRNUirW0e4JMspUGE5nsYAAAAUy4E5LEqm1xvG2mUpZFBMGQRFyxV63c4FAAAAC+53LWrJ3FoEBaypuqoAsrKUhLn" Result="[pwd]" />
+    <ui:ReadRange AddHeaders="True" DataTable="[receiverList]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="426.666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\nminh028\Downloads\Receiver list.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
         </InArgument>
       </ui:ReadRange.Range>
     </ui:ReadRange>
-    <ui:ReadTextFile Content="[bodyForEmail]" DisplayName="Read Text File" FileName="body for email.txt" sap:VirtualizedContainerService.HintSize="426,132" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[receiverList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426,385" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadTextFile Content="[bodyForEmail]" DisplayName="Read Text File" FileName="C:\Users\nminh028\Downloads\body for email.txt" sap:VirtualizedContainerService.HintSize="426.666666666667,134.666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[receiverList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426.666666666667,394" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,237" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,241.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(bodyForEmail,row(0).ToString.Trim,row(1).ToString.Trim,row(2).ToString.Trim)]" DisplayName="Send SMTP Mail Message" Email="prashantravishshahi@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Dear&quot;+row(0).ToString+&quot;, I have surprise gift for you!&quot;]" To="[row(3).ToString.Trim]">
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(bodyForEmail,row(0).ToString.Trim,row(1).ToString.Trim,row(2).ToString.Trim)]" DisplayName="Send SMTP Mail Message" Email="tueminh290597@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Dear&quot;+row(0).ToString+&quot;, I have surprise gift for you!&quot;]" To="[row(3).ToString.Trim]">
               <ui:SendMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
               </ui:SendMail.Files>
