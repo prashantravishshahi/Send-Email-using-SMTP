@@ -1,0 +1,7 @@
+Hi {0},
+
+Your number is {1}. Most ppl describe you as {2}.
+This is automatic email, please ignore.
+
+Regards,
+Min's bot.
